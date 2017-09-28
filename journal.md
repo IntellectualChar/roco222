@@ -1,6 +1,6 @@
 #ROCO222
 
-## 1st lab
+## Lab journal
 ### 25th of September
 
 #### First markdown document
@@ -28,10 +28,10 @@ When we entered the code above startig with $, a message saying command not foun
 
 When removing the $ infront of the code it worked and found out the use off the following terms:
 
-echo - write arguments to outputs  
-cat - read files  
+>echo - write arguments to outputs  
+>cat - read files  
 rm - remove  
-mv - move  
+>mv - move  
 cp - copy   
 
 #### Making a git repository
@@ -51,12 +51,12 @@ Github is a remote internet server you can use to upload (push) and retrieve (pu
 
 To do this you have to create an empty repository on your github account, then using the commands:
 
-> git remote add origin https://github.com/username/repositoryname.git
-> git push -u origin master
+> git remote add origin https://github.com/username/repositoryname.git  
+> git push -u origin master  
 
 Then we logged into the github account through the terminal, and the journal was uploaded to my github.
 
-To upload the file after changes again, we just had to type git push. Then using git pull you can retreive the file.
+To upload the file after changes again, we just had to type git add journal.md, git commit, then git push. Then using git pull you can retreive the file.
 
 
 
