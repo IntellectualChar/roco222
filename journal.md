@@ -36,7 +36,7 @@ cp - copy
 
 #### Making a git repository
 
-Started by typing git init to create a repository in the files.
+Started by going into the roco22 folder created by using cd roco222, then typing git init to create a repository in the files.
 Then:
 $ git config user.name "Firstname Surname"  
 $ git config user.email "<email>"  
@@ -62,7 +62,7 @@ To upload the file after changes again, we just had to type git add journal.md, 
 
 
 To hack into the robot enter the following commands:  
-ping chapman  
+ping chapman   
 ctrl c  
 ssh nao@192.168.0.184 (ip)  
 Enter password: nao  
@@ -77,10 +77,35 @@ tts.say("Hey now you're an all star, get your game on, go play!")
 
 then ctrl x  
 yes  
-enter name mine was shrek.py  
-then enter  
+enter the chosen name mine was: shrek.py  
+then press enter  
   
-then to send to the robot type python shrek.py  
+To send to the robot type: python shrek.py  
+
+### Building a motor
+
+#### Simple design
+
+We built a brushed DC electrical motor  
+
+Starting with a simple design, we chose 80 turns of the coil and used 12V and 2A supply.
+Only able to use 2A due to the restrictions of the power supply.
+
+We found while testing the roation of the motor was unreliable due to the motor only rotaing if started at the correct position.
+Otherwise the forces from the coil and the magnets the oppose and cause the motor core to remain stationary. 
+We also found when testing the comunter made of copper tape bend and was mishapped by the movement and pressuer from the brushes.
+
+The simple motor is shown below:
+(insert image here)
+
+#### Improving the design
+
+We added another coil with 80 turns at a right angle to the first coil. This will mean the motor will continue to move smoother and faster, also while allowing it to start in any orientation unlike the first motor.
+Also Adding an extra section of cork onto the end with comuniter to help it keep its shape when moving. 
+
+Updated motor:
+(insert image here)
+
 
 
 
