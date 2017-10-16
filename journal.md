@@ -102,10 +102,23 @@ The simple motor is shown below:
 
 We added another coil with 80 turns at a right angle to the first coil. This will mean the motor will continue to move smoother and faster, also while allowing it to start in any orientation unlike the first motor.
 Also Adding an extra section of cork onto the end with comuniter to help it keep its shape when moving. 
+We tested the motor on a 12V source.
 
 Updated motor:
 (insert image here)
 
+We found the coils to become warm quite quickly, so added insulation tape to the outside of the coils to help reduce this effect.  
 
+(Updated image)
 
+To reduce the vibrations of the motor we will reduce the diameter of the holders for the motor and secure the magnets in a more rigid hold.
+
+### Incremental encoder
+
+#### Building the circuit
+
+(image of circuit)
+
+Our built circuit:
+(image of circuit)
 
