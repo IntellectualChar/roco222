@@ -122,3 +122,14 @@ To reduce the vibrations of the motor we will reduce the diameter of the holders
 Our built circuit:
 (image of circuit)
 
+### Stepper motor
+
+### Building a Robotic Arm
+
+#### Using the 90 servos
+
+#### Designing the arm
+
+#### First build and test
+
+#### Improving the design
