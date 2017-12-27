@@ -1,4 +1,4 @@
-#ROCO222
+# ROCO222
 
 ## Lab journal
 ### 25th of September
@@ -124,12 +124,51 @@ Our built circuit:
 
 ### Stepper motor
 
+We were using a Unipolar Hybrid stepper motor with 6 connection wires. You can also get bipolar hybrid stepper motors. The difference between the different types are as follows:
+
+#### Hybrid
+(image of one)
+
+This is the motor we used to test in the lab. They are controlled using the same method as a perminatnt magnet stepper motor. When the coil winding around the core is energized a north and south pole are created. The poles attract the perminat poles on the fine metal motor teeth. The motor moves one step at a time to align magnitized rotor teeth to the corrisponding windings. The two forms are bipolar and unipolar as described below. 
+
+#### Bipolar
+(image)
+
+The bipolar motor has 4 wires, with no common center connection and it had two independent sets of coils. This means that the H-bridge channel on the arduino motor sheild can directly control each coil.
+
+#### Unipolar
+(image)
+
+These have 5/6 wires, the one we used in the lab had 6 wires. It has 4 center coils with a common center connections. The common connection(s) need to be connected to ground and the other coil connections connected to the H-bridge chanel on the arduino motor sheild.
+
+##### Full step mode
+
+Only one phase is activated at one time. This mode gives a much lower torque than programming other modes.
+
+##### Double-step mode
+
+This mode has the maximum torque rating, as two phases are always on.
+
+##### Half-step mode
+
+Drive alternates between two phases on and a single phase on. This increases the angular resolution.
+
+##### Micro-step mode
+
+This helps to make the movement of the stepper motor smoother. Winding current approximates a sinusoidal AC waveform.
+
 ### Building a Robotic Arm
 
 #### Using the 90 servos
 
 #### Designing the arm
 
+We designed the arm using Fusion 360.
+
 #### First build and test
 
+We first did a sinmple test the servos to check the wiring and mechanics of the arm by wiring in one of the servos at a time, by coding them to move in a constant 180 degree movement.
+
 #### Improving the design
+
+not sure yet
