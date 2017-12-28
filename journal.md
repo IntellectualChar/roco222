@@ -1,4 +1,5 @@
-# ROCO222
+ROCO222
+=======
 
 ## Lab journal
 ### 25th of September
@@ -7,6 +8,15 @@
 
 Markdown - formating language
 Used as it is easy to convert to HTML and other languages.
+
+Using ** either side of a word mean when uploaded shows in bold. Other examples of formatting aer as such:
+
+* This forms a bullet point
+* Adding hashtags infront of a title determines how large the text is with one being the largest.
+* Using (---) without brackets produces a solid line across the document as a way of breaking it up into sections.
+* placing _ either side of a word formattes it as italics.
+* =x7 under a word turns it into a header.
+* and many more....
 
 #### Command-line 101
 
@@ -28,11 +38,11 @@ When we entered the code above startig with $, a message saying command not foun
 
 When removing the $ infront of the code it worked and found out the use off the following terms:
 
->echo - write arguments to outputs  
->cat - read files  
-rm - remove  
->mv - move  
-cp - copy   
+*echo - write arguments to outputs  
+*cat - read files  
+*rm - remove  
+*mv - move  
+*cp - copy   
 
 #### Making a git repository
 
@@ -58,6 +68,8 @@ Then we logged into the github account through the terminal, and the journal was
 
 To upload the file after changes again, we just had to type git add journal.md, git commit, then git push. Then using git pull you can retreive the file.
 
+---
+
 ### Hacking into the robot
 
 
@@ -81,6 +93,8 @@ enter the chosen name mine was: shrek.py
 then press enter  
   
 To send to the robot type: python shrek.py  
+
+---
 
 ### Building a motor
 
@@ -122,6 +136,8 @@ To reduce the vibrations of the motor we will reduce the diameter of the holders
 Our built circuit:
 (image of circuit)
 
+---
+
 ### Stepper motor
 
 We were using a Unipolar Hybrid stepper motor with 6 connection wires. You can also get bipolar hybrid stepper motors. The difference between the different types are as follows:
@@ -157,9 +173,13 @@ Drive alternates between two phases on and a single phase on. This increases the
 
 This helps to make the movement of the stepper motor smoother. Winding current approximates a sinusoidal AC waveform.
 
+---
+
 ### Building a Robotic Arm
 
 #### Using the 90 servos
+
+The servos we used were SG90s. They are able to roate 90 degrees in both directions, making a total degree of freedom of 180.
 
 #### Designing the arm
 
