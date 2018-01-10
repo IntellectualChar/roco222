@@ -38,11 +38,11 @@ When we entered the code above startig with $, a message saying command not foun
 
 When removing the $ infront of the code it worked and found out the use off the following terms:
 
-*echo - write arguments to outputs  
-*cat - read files  
-*rm - remove  
-*mv - move  
-*cp - copy   
+* echo - write arguments to outputs  
+* cat - read files  
+* rm - remove  
+* mv - move  
+* cp - copy   
 
 #### Making a git repository
 
@@ -98,9 +98,21 @@ To send to the robot type: python shrek.py
 
 ### Building a motor
 
+#### How does a motor work
+
+A motor is built around the idea of electromagnatism. When an electric current passes through a coil in a magnetic field the magnetic force produces a tourque which turns the motor. The motor turns in the direction of the North pole. There are brushed motors and brushless motors, with different benefits to each design.
+
+Brushed:
+
+Esaily able to deliver current to the centeral coil, but is only intermitatly supplied.
+
+Brushless:
+
+The benefits of this are that there is no friction from the brushes so it is able to turn freely.
+
 #### Simple design
 
-We built a brushed DC electrical motor  
+We built a brushed DC electrical motor. It was made out of a cork with nails for axis with copper wire wrapped around to provide the current. We used paperclips for the axis hold and to hold the magnets in place.
 
 Starting with a simple design, we chose 80 turns of the coil and used 12V and 2A supply.
 Only able to use 2A due to the restrictions of the power supply.
@@ -111,6 +123,8 @@ We also found when testing the comunter made of copper tape bend and was mishapp
 
 The simple motor is shown below:
 (insert image here)
+
+However this design was not very effective or reliable as it didnt continue to turn for very long. This was due to the holder for the axis not being tight and the holders for the magnets were easilyable to bend towards and away from the core of the motor. 
 
 #### Improving the design
 
@@ -130,6 +144,8 @@ To reduce the vibrations of the motor we will reduce the diameter of the holders
 ### Incremental encoder
 
 #### Building the circuit
+
+The encoder consists of a LDR and a LED.
 
 (image of circuit)
 
@@ -191,4 +207,5 @@ We first did a sinmple test the servos to check the wiring and mechanics of the 
 
 #### Improving the design
 
-not sure yet
+To improve the design we could add extra servos to allow for more degrees of freedom in the movement. Also could add a stepper motor as the base of the arm to allow it to rotate 360 degrees.
+
