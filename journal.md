@@ -177,17 +177,25 @@ These have 5/6 wires, the one we used in the lab had 6 wires. It has 4 center co
 
 Only one phase is activated at one time. This mode gives a much lower torque than programming other modes.
 
+(image of the code)
+
 ##### Double-step mode
 
 This mode has the maximum torque rating, as two phases are always on.
+
+(image of the code)
 
 ##### Half-step mode
 
 Drive alternates between two phases on and a single phase on. This increases the angular resolution.
 
+(image of the code)
+
 ##### Micro-step mode
 
 This helps to make the movement of the stepper motor smoother. Winding current approximates a sinusoidal AC waveform.
+
+(image of the code)
 
 ---
 
@@ -208,4 +216,64 @@ We first did a sinmple test the servos to check the wiring and mechanics of the 
 #### Improving the design
 
 To improve the design we could add extra servos to allow for more degrees of freedom in the movement. Also could add a stepper motor as the base of the arm to allow it to rotate 360 degrees.
+
+###ROS
+
+#### Basic setup
+
+Start off ros by opening a terminal and typing roscore to start roscore. 
+ 
+By typing into another terminal rostopic list you are able to see the saved topics. To add to it you use rostopic pub the /..... std_msgs/String "....." Such as the message shown below:
+* rostopic pub /test std_msgs/String "Hello"
+
+You or someone else is then able to recall this message in another terminal by using the command rostopic echo /test. This will the print the saved message into their termnal. They can then write over the message for the other person to see. 
+
+There are many other forms of data types other than std_msgs/String such as Byte, ByteMultiArray, Char, Float32, MultiArrayLayout and UInt16 etc..
+
+#### RVIZ
+
+First to install rviz type into a new terminal, sudo apt install rviz.
+
+Once this is done you are then able to type rviz which will open the programme. However without anything running on ROS it was just an epty grid.
+
+#### ROS on arduino
+
+To start i downloaded rosserial using the phase shown below:
+* sudo apt install ros-kinetic-rosserial-python ros-kinetic-rosserial-arduino
+
+Also making it transparently avaliable in the arduino IDE using the two sections:
+* cd $HOME/sketchbook/libraries
+* rosrun rosserial_arduino make_libraries.py .
+
+This means when i restarted arduion IDE I had access to the ROS examples. 
+
+(image)
+The above code allows 0-180 degrees of movement of the servo using ROS, except we used pin 3 to control our first servo.
+
+Once uploaded we started rosserial in the terminal, 
+*  rosrun rosserial_python serial_node.py /dev/ttyACM0
+changing the serial port to match our board.
+
+Then we used rostopic pub with parameters to move the arm.
+
+#### 3D modelling the arm
+
+The ROS node allows simple control of the servo motor but for more complex mtion planning we needed to describe its complete kinematic model. This inolves making a create ageometric and kinematic description of the arm using the URDF format. We do this in Rviz.
+
+(image of code)
+We uploaded the above code as the desciption of our robot arm by using the below commands:
+
+* rosparam set robot_description -t models/robot-arm.urdf
+* rosrun robot_state_publisher robot_state_publisher
+* rosrun joint_state_publisher joint_state_publisher _use_gui:=true
+
+Robot_state_publisher node reads the robots description and broadcasts the 6D transformations. While the joint_state_publisher node reads as well the robot description and creates a GUI with one slider per joint, making it easy to change the movement of the arm.
+
+Then we added the robot model to RViz and set the Fixed frame to /base_link.
+
+This then displays a model in RViz of a rough version of the robotic arm. 
+
+The next step of development of ROS was to change the spesifications in the URDF file to match our robot arm design.
+
+To then move the arm we editied the arduino code so it was able to read the joint state and control the motors.
 
