@@ -122,7 +122,7 @@ Otherwise the forces from the coil and the magnets the oppose and cause the moto
 We also found when testing the comunter made of copper tape bend and was mishapped by the movement and pressuer from the brushes.
 
 The simple motor is shown below:
-(insert image here)
+![motor 1](https://github.com/IntellectualChar/roco222/blob/master/motor1.jpg)
 
 However this design was not very effective or reliable as it didnt continue to turn for very long. This was due to the holder for the axis not being tight and the holders for the magnets were easilyable to bend towards and away from the core of the motor. 
 
