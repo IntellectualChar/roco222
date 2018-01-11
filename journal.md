@@ -20,8 +20,6 @@ Using ** either side of a word mean when uploaded shows in bold. Other examples 
 
 #### Command-line 101
 
-![image-title-here](file:///home/student/Pictures/codeHELLO.png){:class="img-responsive"}
-
 $ ls  
 $ cd /tmp  
 $ cd $HOME # what are those things starting with '$'?  
@@ -46,7 +44,7 @@ When removing the $ infront of the code it worked and found out the use off the 
 
 #### Making a git repository
 
-Started by going into the roco22 folder created by using cd roco222, then typing git init to create a repository in the files.
+Started by going into the roco222 folder created by using cd roco222, then typing git init to create a repository in the files.
 Then:
 $ git config user.name "Firstname Surname"  
 $ git config user.email "<email>"  
@@ -72,7 +70,7 @@ To upload the file after changes again, we just had to type git add journal.md, 
 
 ### Hacking into the robot
 
-We were set to hack into nao and get it to say a phrase.
+We were set to hack into nao and get it to say a phrase using python.
 
 ![Nao](https://github.com/IntellectualChar/roco222/blob/master/nao.jpg)
 
@@ -112,7 +110,7 @@ Esaily able to deliver current to the centeral coil, but is only intermitatly su
 
 Brushless:
 
-The benefits of this are that there is no friction from the brushes so it is able to turn freely.
+The benefits of this are that there is no friction from the brushes so it is able to turn freely. Hall effect used to turn it on and off.
 
 #### Simple design
 
@@ -128,7 +126,7 @@ We also found when testing the comunter made of copper tape bend and was mishapp
 The simple motor is shown below:
 ![motor 1](https://github.com/IntellectualChar/roco222/blob/master/motor1.jpg)
 
-However this design was not very effective or reliable as it didnt continue to turn for very long. This was due to the holder for the axis not being tight and the holders for the magnets were easilyable to bend towards and away from the core of the motor. Shown by us having to hold the brushes against the commutator:
+However this design was not very effective or reliable as it didnt continue to turn for very long. This was due to the holder for the axis not being tight and the holders for the magnets were easilyable to bend towards and away from the core of the motor. Also the brushes were not stiff so didnt stay connected to the commutator, Shown by us having to hold the brushes against the commutator:
 
 [simple motor vid](https://www.youtube.com/watch?v=N0y_D7YMK28)
 
@@ -142,7 +140,7 @@ We added another coil with 80 turns at a right angle to the first coil. This wil
 Also Adding an extra section of cork onto the end with comuniter to help it keep its shape when moving. 
 We tested the motor on a 12V source.
 
-We found the coils to become warm quite quickly, so added insulation tape to the outside of the coils to help reduce this effect.  
+We found the coils to become warm quite quickly due to the current running through it, so added insulation tape to the outside of the coils to help reduce this effect.  
 
 ![Basic motor final](https://github.com/IntellectualChar/roco222/blob/master/Motor_improved.jpg)
 
@@ -292,7 +290,7 @@ Video to show our arm in motion:
 
 To improve the design we could add extra servos to allow for more degrees of freedom in the movement. Also could add a stepper motor as the base of the arm to allow it to rotate 360 degrees.
 
-###ROS
+### ROS
 
 #### Basic setup
 
