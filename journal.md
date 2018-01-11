@@ -72,27 +72,31 @@ To upload the file after changes again, we just had to type git add journal.md, 
 
 ### Hacking into the robot
 
+We were set to hack into nao and get it to say a phrase.
+
+![Nao](https://github.com/IntellectualChar/roco222/blob/master/nao.jpg)
 
 To hack into the robot enter the following commands:  
-ping chapman   
-ctrl c  
-ssh nao@192.168.0.184 (ip)  
-Enter password: nao  
+_ping chapman_  
+_ctrl c_  
+_ssh nao@192.168.0.184 (ip)_  
+_Enter password: nao_  
 Then you're in  
 
 Type nano to edit a code to send  
-type in the code  
-mine:  
-from naoqi import ALProxy  
-tts = ALProxy("ALTextToSpeech", "localhost", 9559)  
-tts.say("Hey now you're an all star, get your game on, go play!")  
+Then type in the code you wish to use. 
+mine was:  
+_from naoqi import ALProxy_
+_tts = ALProxy("ALTextToSpeech", "localhost", 9559)_ 
+_tts.say("Hey now you're an all star, get your game on, go play!")- 
 
 then ctrl x  
 yes  
 enter the chosen name mine was: shrek.py  
 then press enter  
   
-To send to the robot type: python shrek.py  
+To send to the robot type:
+_python shrek.py_  
 
 ---
 
@@ -128,18 +132,27 @@ However this design was not very effective or reliable as it didnt continue to t
 
 #### Improving the design
 
+We kept the base as shown below:
+
+![base](https://github.com/IntellectualChar/roco222/blob/master/motor_base.jpg)
+
 We added another coil with 80 turns at a right angle to the first coil. This will mean the motor will continue to move smoother and faster, also while allowing it to start in any orientation unlike the first motor.
 Also Adding an extra section of cork onto the end with comuniter to help it keep its shape when moving. 
 We tested the motor on a 12V source.
 
-Updated motor:
-(insert image here)
-
 We found the coils to become warm quite quickly, so added insulation tape to the outside of the coils to help reduce this effect.  
 
-(Updated image)
+![Basic motor final](https://github.com/IntellectualChar/roco222/blob/master/Motor_improved.jpg)
 
 To reduce the vibrations of the motor we will reduce the diameter of the holders for the motor and secure the magnets in a more rigid hold.
+
+To make the design more rigid I decided to make the motor out of lego, as this will give more even axis and strong non flexible holders for the magnets. First trialed one design as shown below:
+
+![lego motor core](https://github.com/IntellectualChar/roco222/blob/master/Motor_trial.jpg)
+
+However we found that the base strucure and stand for the motor was not stable enough to with stand its movement, so adding more lego bricks and a stable base lead to the final design as shown below:
+
+![Final motor](https://github.com/IntellectualChar/roco222/blob/master/Final_motor.jpg)
 
 ### Incremental encoder
 
@@ -173,23 +186,54 @@ The bipolar motor has 4 wires, with no common center connection and it had two i
 
 These have 5/6 wires, the one we used in the lab had 6 wires. It has 4 center coils with a common center connections. The common connection(s) need to be connected to ground and the other coil connections connected to the H-bridge chanel on the arduino motor sheild.
 
+#### Our set up
+
+![stepper motor](https://github.com/IntellectualChar/roco222/blob/master/Steppermotor.jpg)
+
+The setup for the code is as follows:
+
+_#define DIR_A 12_
+_#define DIR_B 13_
+
+_#define SPEED_A 3
+#define SPEED_B 11_
+
+_#define PERIOD 3_
+
+
+_void setup() {
+//Setup Channel A
+pinMode(12, OUTPUT); //Initiates Motor Channel A pin
+pinMode(9, OUTPUT); //Initiates Brake Channel A pin
+}_
+
+_void setup2() {
+//Setup channel B
+pinMode(13, OUTPUT);
+pinMode(8, OUTPUT); 
+digitalWrite(9, LOW); //Disengage the Brake for Channel A
+digitalWrite(8,  LOW); //Disengage the Brake for Channel B
+}_
+
+
 ##### Full step mode
 
 Only one phase is activated at one time. This mode gives a much lower torque than programming other modes.
 
-(image of the code)
+![fullstep](https://github.com/IntellectualChar/roco222/blob/master/Fullstep.jpg)
 
 ##### Double-step mode
 
 This mode has the maximum torque rating, as two phases are always on.
 
-(image of the code)
+![doublestep](https://github.com/IntellectualChar/roco222/blob/master/Fullstep2.jpg)
 
 ##### Half-step mode
 
 Drive alternates between two phases on and a single phase on. This increases the angular resolution.
 
-(image of the code)
+![Halfstep1](https://github.com/IntellectualChar/roco222/blob/master/Half_step1.jpg)
+![Halfstep2](https://github.com/IntellectualChar/roco222/blob/master/Half_step2.jpg)
 
 ##### Micro-step mode
 
@@ -204,6 +248,9 @@ This helps to make the movement of the stepper motor smoother. Winding current a
 #### Using the 90 servos
 
 The servos we used were SG90s. They are able to roate 90 degrees in both directions, making a total degree of freedom of 180.
+The wiring of the servo is shown below:
+
+![servo](https://github.com/IntellectualChar/roco222/blob/master/Servo.jpg)
 
 #### Designing the arm
 
@@ -212,6 +259,8 @@ We designed the arm using Fusion 360.
 #### First build and test
 
 We first did a sinmple test the servos to check the wiring and mechanics of the arm by wiring in one of the servos at a time, by coding them to move in a constant 180 degree movement.
+
+![servo movement](https://github.com/IntellectualChar/roco222/blob/master/servo_control.jpg)
 
 #### Improving the design
 
@@ -223,7 +272,11 @@ To improve the design we could add extra servos to allow for more degrees of fre
 
 Start off ros by opening a terminal and typing roscore to start roscore. 
  
-By typing into another terminal rostopic list you are able to see the saved topics. To add to it you use rostopic pub the /..... std_msgs/String "....." Such as the message shown below:
+By typing into another terminal rostopic list you are able to see the saved topics. 
+
+![rostopic](https://github.com/IntellectualChar/roco222/blob/master/Rostopic.jpg)
+
+To add to it you use rostopic pub the /..... std_msgs/String "....." Such as the message shown below:
 * rostopic pub /test std_msgs/String "Hello"
 
 You or someone else is then able to recall this message in another terminal by using the command rostopic echo /test. This will the print the saved message into their termnal. They can then write over the message for the other person to see. 
@@ -247,7 +300,8 @@ Also making it transparently avaliable in the arduino IDE using the two sections
 
 This means when i restarted arduion IDE I had access to the ROS examples. 
 
-(image)
+![ROS servo](https://github.com/IntellectualChar/roco222/blob/master/ROS_servo.jpg)
+
 The above code allows 0-180 degrees of movement of the servo using ROS, except we used pin 3 to control our first servo.
 
 Once uploaded we started rosserial in the terminal, 
@@ -260,7 +314,8 @@ Then we used rostopic pub with parameters to move the arm.
 
 The ROS node allows simple control of the servo motor but for more complex mtion planning we needed to describe its complete kinematic model. This inolves making a create ageometric and kinematic description of the arm using the URDF format. We do this in Rviz.
 
-(image of code)
+![URDF](https://github.com/IntellectualChar/roco222/blob/master/URDF1.jpg)
+
 We uploaded the above code as the desciption of our robot arm by using the below commands:
 
 * rosparam set robot_description -t models/robot-arm.urdf
