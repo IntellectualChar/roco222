@@ -128,7 +128,9 @@ We also found when testing the comunter made of copper tape bend and was mishapp
 The simple motor is shown below:
 ![motor 1](https://github.com/IntellectualChar/roco222/blob/master/motor1.jpg)
 
-However this design was not very effective or reliable as it didnt continue to turn for very long. This was due to the holder for the axis not being tight and the holders for the magnets were easilyable to bend towards and away from the core of the motor. 
+However this design was not very effective or reliable as it didnt continue to turn for very long. This was due to the holder for the axis not being tight and the holders for the magnets were easilyable to bend towards and away from the core of the motor. Shown by us having to hold the brushes against the commutator:
+
+[simple motor vid](https://www.youtube.com/watch?v=N0y_D7YMK28)
 
 #### Improving the design
 
@@ -154,16 +156,20 @@ However we found that the base strucure and stand for the motor was not stable e
 
 ![Final motor](https://github.com/IntellectualChar/roco222/blob/master/Final_motor.jpg)
 
+The below video shows a slow version of our motors movement:
+
+[motor move](https://www.youtube.com/watch?v=8WvBiNtY8GU)
+
 ### Incremental encoder
 
 #### Building the circuit
 
-The encoder consists of a LDR and a LED.
+The encoder consists of a LDR and a IR LED.
 
-(image of circuit)
+![encoder](https://github.com/IntellectualChar/roco222/blob/master/Encoder_circuit.jpg)
 
 Our built circuit:
-(image of circuit)
+![encoder2](https://github.com/IntellectualChar/roco222/blob/master/Encoder.jpg)
 
 ---
 
@@ -172,17 +178,20 @@ Our built circuit:
 We were using a Unipolar Hybrid stepper motor with 6 connection wires. You can also get bipolar hybrid stepper motors. The difference between the different types are as follows:
 
 #### Hybrid
-(image of one)
+
+![hybrid](https://github.com/IntellectualChar/roco222/blob/master/Hybrid_motor.jpg)
 
 This is the motor we used to test in the lab. They are controlled using the same method as a perminatnt magnet stepper motor. When the coil winding around the core is energized a north and south pole are created. The poles attract the perminat poles on the fine metal motor teeth. The motor moves one step at a time to align magnitized rotor teeth to the corrisponding windings. The two forms are bipolar and unipolar as described below. 
 
 #### Bipolar
-(image)
+
+![bipolar](https://github.com/IntellectualChar/roco222/blob/master/Bipolar.jpg)
 
 The bipolar motor has 4 wires, with no common center connection and it had two independent sets of coils. This means that the H-bridge channel on the arduino motor sheild can directly control each coil.
 
 #### Unipolar
-(image)
+
+![uni](https://github.com/IntellectualChar/roco222/blob/master/Unipolar.jpg)
 
 These have 5/6 wires, the one we used in the lab had 6 wires. It has 4 center coils with a common center connections. The common connection(s) need to be connected to ground and the other coil connections connected to the H-bridge chanel on the arduino motor sheild.
 
@@ -218,17 +227,23 @@ digitalWrite(8,  LOW); //Disengage the Brake for Channel B
 
 ##### Full step mode
 
+![full](https://github.com/IntellectualChar/roco222/blob/master/Fullstep_diagram.jpg)
+
 Only one phase is activated at one time. This mode gives a much lower torque than programming other modes.
 
 ![fullstep](https://github.com/IntellectualChar/roco222/blob/master/Fullstep.jpg)
 
 ##### Double-step mode
 
+![double](https://github.com/IntellectualChar/roco222/blob/master/Fullstep2_diagram.jpg)
+
 This mode has the maximum torque rating, as two phases are always on.
 
 ![doublestep](https://github.com/IntellectualChar/roco222/blob/master/Fullstep2.jpg)
 
 ##### Half-step mode
+
+![half](https://github.com/IntellectualChar/roco222/blob/master/Halfstep_table.jpg)
 
 Drive alternates between two phases on and a single phase on. This increases the angular resolution.
 
@@ -237,9 +252,11 @@ Drive alternates between two phases on and a single phase on. This increases the
 
 ##### Micro-step mode
 
+![micro](https://github.com/IntellectualChar/roco222/blob/master/Microstepping.jpg)
+
 This helps to make the movement of the stepper motor smoother. Winding current approximates a sinusoidal AC waveform.
 
-(image of the code)
+
 
 ---
 
@@ -256,11 +273,20 @@ The wiring of the servo is shown below:
 
 We designed the arm using Fusion 360.
 
+![fusion](https://github.com/IntellectualChar/roco222/blob/master/arm_fusion.png)
+
 #### First build and test
+
+![side](https://github.com/IntellectualChar/roco222/blob/master/arm_side.jpg)
+
+![top](https://github.com/IntellectualChar/roco222/blob/master/arm_top.jpg)
 
 We first did a sinmple test the servos to check the wiring and mechanics of the arm by wiring in one of the servos at a time, by coding them to move in a constant 180 degree movement.
 
 ![servo movement](https://github.com/IntellectualChar/roco222/blob/master/servo_control.jpg)
+
+Video to show our arm in motion:
+[arm movement](https://www.youtube.com/watch?v=cOelTML7cZo)
 
 #### Improving the design
 
